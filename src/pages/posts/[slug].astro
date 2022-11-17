@@ -1,0 +1,24 @@
+---
+
+import MainLayout from "../../layouts/MainLayout.astro"
+
+export async function getStaticPaths(){
+	const posts = await Astro.glob("../../posts/*.md")
+	return posts.map(post => ({
+		params : {
+			slug : post.frontmatter.slug
+		},
+		props : {
+			post
+		}
+	}))
+}
+
+const { Content, frontmatter} = Astro.props.post
+---
+
+<MainLayout>
+	<a href="/posts" class="block mt-6 underline">Go Back</a>
+	<h1 class="heading">{frontmatter.title}</h1>
+	<Content/>	
+</MainLayout>
