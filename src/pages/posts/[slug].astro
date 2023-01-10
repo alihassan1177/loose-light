@@ -17,8 +17,8 @@ export async function getStaticPaths(){
 const { Content, frontmatter} = Astro.props.post
 ---
 
-<MainLayout>
-	<a href="/posts" class="block mt-6 underline">Go Back</a>
+<MainLayout title={frontmatter.title}>
+	<a href="/" class="block mt-6 underline">Go Back</a>
 	<h1 class="heading">{frontmatter.title}</h1>
 	<Content/>	
 </MainLayout>
