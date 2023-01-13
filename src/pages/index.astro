@@ -4,9 +4,8 @@ import MainLayout from "../layouts/MainLayout.astro"
 const posts = await Astro.glob("../posts/*.md")
 ---
 
-<MainLayout title="Posts | Ali Hassan">
-	<h1 class="heading">Hello From Posts</h1>
-	{posts.map(post => {
-		return <a href={`/posts/${post.frontmatter.slug}`}>{post.frontmatter.title}</a>
+<MainLayout title="Ali Hassan's Blog">
+	{posts.map((post, index) => {
+		return <a class="post-title block" href={`/posts/${post.frontmatter.slug}`}>{index + 1}.  {post.frontmatter.title}</a>
 	})}
 </MainLayout>
