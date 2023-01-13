@@ -1,11 +1,31 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro"
+import MainLayout from "../layouts/MainLayout.astro";
 
-const posts = await Astro.glob("../posts/*.md")
+const posts = await Astro.glob("../posts/*.md");
 ---
 
 <MainLayout title="Ali Hassan's Blog">
-	{posts.map((post, index) => {
-		return <a class="post-title block" href={`/posts/${post.frontmatter.slug}`}>{index + 1}.  {post.frontmatter.title}</a>
-	})}
+  <section class="mb-20">
+    <h1 class="text-slate-200 text-6xl mb-4">
+      Blog for Developers by Developer.
+    </h1>
+    <p class="text-slate-200 text-2xl">
+      React Engineer crafting amazing Web Experience for Users
+    </p>
+  </section>
+  <h2 class="text-4xl text-slate-200 mb-6">Latest Posts</h2>
+  {
+    posts.map((post, index) => {
+      return (
+        <a class="block post" href={`/posts/${post.frontmatter.slug}`}>
+          <div>
+            <h2 class="post-title">
+              {index + 1}. {post.frontmatter.title}
+            </h2>
+            <p class="text-slate-300">{post.frontmatter.desc}</p>
+          </div>
+        </a>
+      );
+    })
+  }
 </MainLayout>

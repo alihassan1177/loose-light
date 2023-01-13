@@ -2,6 +2,7 @@
 
 title : My Second Post
 slug : my-second-post
+desc : Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia.
 
 ---
 

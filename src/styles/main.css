@@ -23,6 +23,9 @@
     @apply w-6;
   }
   .post-title{
-    @apply text-3xl text-white text-slate-200 font-bold
+    @apply text-xl text-white text-slate-200 mb-2
+  }
+  .post{
+    @apply border-b border-zinc-700 pb-16 mb-16
   }
 }
